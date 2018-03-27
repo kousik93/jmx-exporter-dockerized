@@ -73,7 +73,7 @@ CHECK_INIT_ITERATIONS=$(expr $CHECK_INIT_MAX_DELAY / $CHECK_INIT_INTERVAL)
 
 # Note: we should find a way to disable jmx in the jmx-exporter itself (pending)
 #jvm opts processing (it requires JMX_LOCAL_PORT to be processed already)
-DEF_JVM_LOCAL_OPTS="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=$JMX_LOCAL_PORT"
+DEF_JVM_LOCAL_OPTS="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=$JMX_LOCAL_PORT -Xms300m -Xmx900m"
 test -z "$JVM_LOCAL_OPTS" && JVM_LOCAL_OPTS="$DEF_JVM_LOCAL_OPTS"
 
 # PREPARE_CONFIG TRUE OR FALSE
